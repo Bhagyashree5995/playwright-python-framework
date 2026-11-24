@@ -18,6 +18,7 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 - **Cart**: asserted empty before adding, then checked after adding and after removing, so a broken remove button cannot hide behind a passing add test.
 - **Sorting**: prices are read from the page and compared against a sorted copy, so the test fails if the dropdown changes but products do not reorder.
 - **API**: every test verifies stored state, not just the response. After an update, it re-fetches the booking; after a delete, it expects 404. The unauthorised update asserts both the 403 and that the stored value is unchanged.
+- **API Mocking (page.route())**: intercepts /api/campaigns responses to verify payload-to-UI rendering accuracy, empty-state handling ([]), and graceful UI fallback on 500 backend errors — no external server needed.
 
 ## Structure
 
@@ -32,7 +33,8 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 
 Requires Python 3.11+.
 
-    git clone https://github.com/Bhagyashree5995/playwright-ai-framework.git
+    git clone https://github.com/Bhagyashree5995/playwright-python-framework.git
+    cd playwright-python-framework
     cd playwright-ai-framework
     python -m venv .venv
     .venv\Scripts\activate
