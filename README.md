@@ -10,7 +10,7 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 | API | Restful-Booker | Create, read back, update with auth token, unauthorised update, delete, 404 case | 
 | UI (mocked) | Dashboard (inline HTML) | API mocking: data accuracy, empty state, 500 error handling via page.route() |
 
-14 tests: 8 UI (run on Chromium, Firefox and WebKit, so 24 executions) and 6 API.
+17 tests: 8 UI (run on Chromium, Firefox and WebKit, so 24 executions), 3 UI mocked (Chromium only), and 6 API.
 
 ## Why these tests
 
