@@ -7,7 +7,8 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 | Layer | Target | Covers |
 | --- | --- | --- |
 | UI | SauceDemo | Valid login, wrong password, locked-out user, product listing, cart badge on add and remove, price sorting |
-| API | Restful-Booker | Create, read back, update with auth token, unauthorised update, delete, 404 case | | UI (mocked) | Dashboard (inline HTML) | API mocking: data accuracy, empty state, 500 error handling via page.route() |
+| API | Restful-Booker | Create, read back, update with auth token, unauthorised update, delete, 404 case | 
+| UI (mocked) | Dashboard (inline HTML) | API mocking: data accuracy, empty state, 500 error handling via page.route() |
 
 14 tests: 8 UI (run on Chromium, Firefox and WebKit, so 24 executions) and 6 API.
 
