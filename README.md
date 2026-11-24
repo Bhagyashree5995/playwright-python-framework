@@ -35,7 +35,6 @@ Requires Python 3.11+.
 
     git clone https://github.com/Bhagyashree5995/playwright-python-framework.git
     cd playwright-python-framework
-    cd playwright-ai-framework
     python -m venv .venv
     .venv\Scripts\activate
     pip install -r requirements.txt
