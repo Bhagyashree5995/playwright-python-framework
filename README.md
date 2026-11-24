@@ -7,7 +7,7 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 | Layer | Target | Covers |
 | --- | --- | --- |
 | UI | SauceDemo | Valid login, wrong password, locked-out user, product listing, cart badge on add and remove, price sorting |
-| API | Restful-Booker | Create, read back, update with auth token, unauthorised update, delete, 404 case |
+| API | Restful-Booker | Create, read back, update with auth token, unauthorised update, delete, 404 case | | UI (mocked) | Dashboard (inline HTML) | API mocking: data accuracy, empty state, 500 error handling via page.route() |
 
 14 tests: 8 UI (run on Chromium, Firefox and WebKit, so 24 executions) and 6 API.
 
@@ -16,7 +16,7 @@ Hand-written Playwright (Python) and pytest framework covering a web UI across t
 - **Login**: the locked-out and wrong-password cases assert on the real error message, so a blank page fails instead of passing a URL check.
 - **Cart**: asserted empty before adding, then checked after adding and after removing, so a broken remove button cannot hide behind a passing add test.
 - **Sorting**: prices are read from the page and compared against a sorted copy, so the test fails if the dropdown changes but products do not reorder.
-- **API**: every test verifies stored state, not just the response. After an update it re-fetches the booking; after a delete it expects 404. The unauthorised update asserts both the 403 and that the stored value is unchanged.
+- **API**: every test verifies stored state, not just the response. After an update, it re-fetches the booking; after a delete, it expects 404. The unauthorised update asserts both the 403 and that the stored value is unchanged.
 
 ## Structure
 
@@ -45,7 +45,7 @@ Cross-browser run:
 
 ## CI
 
-GitHub Actions runs the API tests and the UI tests on all three browsers on Ubuntu, uploading HTML reports as artifacts on every run, including failures.
+GitHub Actions runs API and UI tests on all three browsers on Ubuntu and uploads HTML reports as artefacts on every run, including failures.
 
 ## Design notes
 
